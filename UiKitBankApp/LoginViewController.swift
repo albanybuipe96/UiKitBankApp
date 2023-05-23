@@ -39,11 +39,13 @@ extension LoginViewController {
         titleLabel.textAlignment = .center
         titleLabel.text = "Financio Inc."
         titleLabel.font = UIFont(name: "Helvetica", size: 55)
+        titleLabel.textColor = .systemGray2
         
         mottoLabel.translatesAutoresizingMaskIntoConstraints = false
         mottoLabel.textAlignment = .center
         mottoLabel.text = "Empowering Your Financial Journey!"
         mottoLabel.font = UIFont(name: "Times New Roman", size: 14)
+//        mottoLabel.font = UIFont.italicSystemFont(ofSize: 14)
         
         loginView.translatesAutoresizingMaskIntoConstraints = false
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C68C6302A1D447E00FA21A1 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */; };
 		9CDDD72C2A1BCE6400D6A6E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDD72B2A1BCE6400D6A6E1 /* AppDelegate.swift */; };
 		9CDDD7302A1BCE6400D6A6E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDD72F2A1BCE6400D6A6E1 /* LoginViewController.swift */; };
 		9CDDD7352A1BCE6600D6A6E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD7342A1BCE6600D6A6E1 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		9CDDD7282A1BCE6400D6A6E1 /* UiKitBankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UiKitBankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDDD72B2A1BCE6400D6A6E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CDDD72F2A1BCE6400D6A6E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C68C62E2A1D443B00FA21A1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
 		9CDDD71F2A1BCE6400D6A6E1 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				9CDDD73F2A1BD16500D6A6E1 /* Generated Files */,
+				9C68C62E2A1D443B00FA21A1 /* Onboarding */,
 				9CDDD7402A1BD1AA00D6A6E1 /* Login */,
 				9CDDD72B2A1BCE6400D6A6E1 /* AppDelegate.swift */,
 			);
@@ -153,6 +164,7 @@
 				9CDDD7422A1BD1E500D6A6E1 /* LoginView.swift in Sources */,
 				9CDDD7302A1BCE6400D6A6E1 /* LoginViewController.swift in Sources */,
 				9CDDD72C2A1BCE6400D6A6E1 /* AppDelegate.swift in Sources */,
+				9C68C6302A1D447E00FA21A1 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
