@@ -37,12 +37,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9C68C62E2A1D443B00FA21A1 /* Onboarding */ = {
+		9C68C6312A1D57F600FA21A1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9CDDD72F2A1BCE6400D6A6E1 /* LoginViewController.swift */,
+				9CDDD7412A1BD1E500D6A6E1 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9C68C6322A1D580F00FA21A1 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */,
 			);
-			name = Onboarding;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		9CDDD71F2A1BCE6400D6A6E1 = {
@@ -64,9 +73,9 @@
 		9CDDD72A2A1BCE6400D6A6E1 /* UiKitBankApp */ = {
 			isa = PBXGroup;
 			children = (
+				9C68C6322A1D580F00FA21A1 /* Onboarding */,
+				9C68C6312A1D57F600FA21A1 /* Login */,
 				9CDDD73F2A1BD16500D6A6E1 /* Generated Files */,
-				9C68C62E2A1D443B00FA21A1 /* Onboarding */,
-				9CDDD7402A1BD1AA00D6A6E1 /* Login */,
 				9CDDD72B2A1BCE6400D6A6E1 /* AppDelegate.swift */,
 			);
 			path = UiKitBankApp;
@@ -80,15 +89,6 @@
 				9CDDD7392A1BCE6600D6A6E1 /* Info.plist */,
 			);
 			name = "Generated Files";
-			sourceTree = "<group>";
-		};
-		9CDDD7402A1BD1AA00D6A6E1 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				9CDDD72F2A1BCE6400D6A6E1 /* LoginViewController.swift */,
-				9CDDD7412A1BD1E500D6A6E1 /* LoginView.swift */,
-			);
-			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
