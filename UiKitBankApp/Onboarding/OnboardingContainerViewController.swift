@@ -18,9 +18,9 @@ class OnboardingContainerViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         
-        let page1 = ViewControler1()
-        let page2 = ViewControler2()
-        let page3 = ViewControler3()
+        let page1 = OnboardingViewController(heroImageName: "delorean", titleText: "Financio: Your all-in-one banking companion, empowering you to manage your finances effortlessly.")
+        let page2 = OnboardingViewController(heroImageName: "thumbs", titleText: "Seamlessly track transactions, monitor account balances, and make secure payments with ease.")
+        let page3 = OnboardingViewController(heroImageName: "world", titleText: "Experience banking reimagined with intuitive features, personalized insights, and utmost security for your financial peace of mind.")
         
         pages.append(page1)
         pages.append(page2)
@@ -91,26 +91,4 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
         return pages[index + 1]
     }
     
-}
-
-// MARK: - ViewControllers -> [Pages 1, 2 & 3]
-class ViewControler1: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-    }
-}
-
-class ViewControler2: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
-
-class ViewControler3: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBlue
-    }
 }
