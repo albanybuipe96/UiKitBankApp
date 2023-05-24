@@ -9,8 +9,6 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    let closeButton = UIButton(type: .system)
-    let nextButton = UIButton(type: .system)
     let stack = UIStackView()
     let heroImage = UIImageView()
     let titleLabel = UILabel()
@@ -42,15 +40,6 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
     
     func style() {
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.configuration = .borderless()
-        closeButton.setTitle("Close", for: [])
-        closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
-        
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.configuration = .borderless()
-        nextButton.setTitle("Next", for: [])
-        nextButton.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
         
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -72,14 +61,7 @@ extension OnboardingViewController {
         stack.addArrangedSubview(heroImage)
         stack.addArrangedSubview(titleLabel)
         
-        view.addSubview(closeButton)
-        view.addSubview(nextButton)
         view.addSubview(stack)
-        
-        // closeButton constraints
-        NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 45)
-        ])
         
         // stack constraints
         NSLayoutConstraint.activate([
@@ -88,22 +70,11 @@ extension OnboardingViewController {
             stack.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: stack.trailingAnchor, multiplier: 1),
         ])
-        
-        // nextButton constraints
-        NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 1),
-        ])
+
     }
 }
 
 // MARK: actions for ViewControler1
 extension OnboardingViewController {
-    @objc func closeTapped(_ action: UIButton) {
-        print("Close tapped!")
-    }
     
-    @objc func nextTapped(_ action: UIButton) {
-        print("Next tapped!")
-    }
 }
