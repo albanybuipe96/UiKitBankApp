@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Positioner
 
 protocol LogoutDelegate: AnyObject {
     func didLogout()
@@ -17,12 +18,53 @@ protocol LoginViewControllerDelegate: AnyObject {
 
 class LoginViewController: UIViewController {
     
-    let titleLabel = UILabel()
-    let mottoLabel = UILabel()
-//    let stackView = UIStackView()
-    let loginView = LoginView()
-    let signinButton = UIButton(type: .system)
-    let errorMessageLabel = UILabel()
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.text = "Financio Inc."
+        label.font = UIFont(name: "Helvetica", size: 55)
+        label.textColor = .systemGray2
+        return label
+    }()
+    
+    private lazy var mottoLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.text = "Empowering Your Financial Journey!"
+        label.font = UIFont(name: "Times New Roman", size: 14)
+        return label
+    }()
+
+    private lazy var loginView: LoginView = {
+        let view = LoginView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var signinButton: UIButton = {
+        let signinButton = UIButton(type: .system)
+        signinButton.translatesAutoresizingMaskIntoConstraints = false
+        signinButton.configuration = .filled()
+        signinButton.configuration?.imagePadding = 8
+        signinButton.setTitle("Sign in", for: [])
+        signinButton.addTarget(self, action: #selector(signinTapped), for: .primaryActionTriggered)
+        signinButton.layer.cornerRadius = 5
+        signinButton.clipsToBounds = true
+        
+        return signinButton
+    }()
+    
+    private lazy var errorMessageLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.textColor = .systemRed
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
     
     weak var delegate: LoginViewControllerDelegate?
     
@@ -37,7 +79,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        style()
         layout()
     }
     
@@ -49,39 +90,6 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController {
-    private func style() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.textAlignment = .center
-        titleLabel.text = "Financio Inc."
-        titleLabel.font = UIFont(name: "Helvetica", size: 55)
-        titleLabel.textColor = .systemGray2
-        
-        mottoLabel.translatesAutoresizingMaskIntoConstraints = false
-        mottoLabel.textAlignment = .center
-        mottoLabel.text = "Empowering Your Financial Journey!"
-        mottoLabel.font = UIFont(name: "Times New Roman", size: 14)
-//        mottoLabel.font = UIFont.italicSystemFont(ofSize: 14)
-        
-        loginView.translatesAutoresizingMaskIntoConstraints = false
-        
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.axis = .vertical
-//        stackView.spacing = 8
-        
-        signinButton.translatesAutoresizingMaskIntoConstraints = false
-        signinButton.configuration = .filled()
-        signinButton.configuration?.imagePadding = 8
-        signinButton.setTitle("Sign in", for: [])
-        signinButton.addTarget(self, action: #selector(signinTapped), for: .primaryActionTriggered)
-        signinButton.layer.cornerRadius = 5
-        signinButton.clipsToBounds = true
-        
-        errorMessageLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorMessageLabel.textAlignment = .center
-        errorMessageLabel.textColor = .systemRed
-        errorMessageLabel.numberOfLines = 0
-        errorMessageLabel.isHidden = true
-    }
     
     private func layout() {
         view.addSubview(titleLabel)
@@ -90,41 +98,21 @@ extension LoginViewController {
         view.addSubview(signinButton)
         view.addSubview(errorMessageLabel)
         
-        // titleLabel constraints
-        NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: mottoLabel.topAnchor, constant: -20),
-            titleLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-        ])
+        titleLabel.pintoBottom(superview: mottoLabel.topAnchor, space: -20)
+        titleLabel.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
         
-        // mottoLabel constraints
-        NSLayoutConstraint.activate([
-            mottoLabel.bottomAnchor.constraint(equalTo: loginView.topAnchor, constant: -50),
-            mottoLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            mottoLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-        ])
+        mottoLabel.pintoBottom(superview: loginView.topAnchor, space: -50)
+        mottoLabel.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
         
-        // loginView constraints
-        NSLayoutConstraint.activate([
-            loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-            loginView.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 1),
-            loginView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        loginView.centerX(view)
+        loginView.centerY(view)
+        loginView.pintoLeftAndRight(lsuperview: view.leadingAnchor, rsuperview: view.trailingAnchor, lspace: 8, rspace: -8)
         
-        // signinButton constraints
-        NSLayoutConstraint.activate([
-            signinButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 2),
-            signinButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            signinButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-        ])
+        signinButton.pintoTop(superview: loginView.bottomAnchor, space: 16)
+        signinButton.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
         
-        // errorMessageLabel constraints
-        NSLayoutConstraint.activate([
-            errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: signinButton.bottomAnchor, multiplier: 2),
-            errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
-            errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
-        ])
+        errorMessageLabel.pintoTop(superview: signinButton.bottomAnchor, space: 16)
+        errorMessageLabel.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
         
     }
 }

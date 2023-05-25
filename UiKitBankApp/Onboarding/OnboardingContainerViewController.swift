@@ -13,7 +13,14 @@ protocol OnboardingContainerViewControllerDelegate: AnyObject {
 
 class OnboardingContainerViewController: UIViewController {
     
-    let closeButton = UIButton(type: .system)
+    private lazy var closeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.configuration = .borderless()
+        button.setTitle("Close", for: [])
+        button.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
+        return button
+    }()
     
     let pageViewController: UIPageViewController
     var pages: [UIViewController] = []
@@ -45,7 +52,6 @@ class OnboardingContainerViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
-        style()
         layout()
         
     }
@@ -75,21 +81,11 @@ extension OnboardingContainerViewController {
         currentVC = pages.first!
     }
     
-    private func style() {
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.configuration = .borderless()
-        closeButton.setTitle("Close", for: [])
-        closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
-    }
-    
     private func layout() {
         view.addSubview(closeButton)
         
-        // closeButton constraints
-        NSLayoutConstraint.activate([
-            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
-            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
-        ])
+        closeButton.pintoLeft(superview: view.leadingAnchor, space: 16)
+        closeButton.pintoTop(superview: view.safeAreaLayoutGuide.topAnchor, space: 16)
     }
 }
 

@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        window?.rootViewController = dummyViewController
         window?.rootViewController = loginViewController
+//        window?.rootViewController = onboardinViewContainerViewController
         
         return true
     }

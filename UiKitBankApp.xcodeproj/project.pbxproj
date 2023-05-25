@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C157ED02A1E8FC7001F8C55 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C157ECF2A1E8FC7001F8C55 /* LocalState.swift */; };
+		9C157EDD2A1F2C05001F8C55 /* Positioner in Frameworks */ = {isa = PBXBuildFile; productRef = 9C157EDC2A1F2C05001F8C55 /* Positioner */; };
 		9C68C6302A1D447E00FA21A1 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */; };
 		9C68C6342A1DDE0D00FA21A1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C6332A1DDE0D00FA21A1 /* OnboardingViewController.swift */; };
 		9CAE51E72A1E458F00F3901B /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE51E62A1E458F00F3901B /* DummyViewController.swift */; };
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C157EDD2A1F2C05001F8C55 /* Positioner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +134,9 @@
 			dependencies = (
 			);
 			name = UiKitBankApp;
+			packageProductDependencies = (
+				9C157EDC2A1F2C05001F8C55 /* Positioner */,
+			);
 			productName = UiKitBankApp;
 			productReference = 9CDDD7282A1BCE6400D6A6E1 /* UiKitBankApp.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 9CDDD71F2A1BCE6400D6A6E1;
+			packageReferences = (
+				9C157EDB2A1F2C05001F8C55 /* XCRemoteSwiftPackageReference "Positioner" */,
+			);
 			productRefGroup = 9CDDD7292A1BCE6400D6A6E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -400,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C157EDB2A1F2C05001F8C55 /* XCRemoteSwiftPackageReference "Positioner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/albanybuipe96/Positioner.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C157EDC2A1F2C05001F8C55 /* Positioner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C157EDB2A1F2C05001F8C55 /* XCRemoteSwiftPackageReference "Positioner" */;
+			productName = Positioner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CDDD7202A1BCE6400D6A6E1 /* Project object */;
 }

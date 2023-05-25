@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "positioner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/albanybuipe96/Positioner.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4178204a518483d4a97214dd4bfa8be959b60940"
+      }
+    }
+  ],
+  "version" : 2
+}

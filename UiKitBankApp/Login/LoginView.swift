@@ -9,15 +9,57 @@ import Foundation
 import UIKit
 
 class LoginView: UIView {
-    let stackView = UIStackView()
-    let usernameTextField = UITextField()
-    let passwordTextField = UITextField()
-    let divider = UIView()
+    
+    public lazy var usernameTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.placeholder = "Username"
+        textfield.text = "Albany"
+        textfield.delegate = self
+        return textfield
+    }()
+    
+    public lazy var passwordTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.placeholder = "Password"
+        textfield.text = "welcome"
+        textfield.isSecureTextEntry = true
+        textfield.delegate = self
+        return textfield
+    }()
+    
+    private lazy var divider: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        return view
+    }()
+    
+    private lazy var stack: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [
+            usernameTextField,
+            divider,
+            passwordTextField
+        ])
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 8
+        return view
+    }()
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        style()
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .secondarySystemBackground
+        
+        layer.cornerRadius = 5
+        clipsToBounds = true
+        
         layout()
     }
     
@@ -28,47 +70,18 @@ class LoginView: UIView {
 }
 
 extension LoginView {
-    func style() {
-        translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .secondarySystemBackground
-        
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 8
-        
-        usernameTextField.translatesAutoresizingMaskIntoConstraints = false
-        usernameTextField.placeholder = "Username"
-        usernameTextField.text = "Albany"
-        usernameTextField.delegate = self
-        
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.placeholder = "Password"
-        passwordTextField.text = "welcome"
-        passwordTextField.isSecureTextEntry = true
-        passwordTextField.delegate = self
-        
-        divider.translatesAutoresizingMaskIntoConstraints = false
-        divider.backgroundColor = .white
-        
-        layer.cornerRadius = 5
-        clipsToBounds = true
-    }
     
     func layout() {
-        stackView.addArrangedSubview(usernameTextField)
-        stackView.addArrangedSubview(divider)
-        stackView.addArrangedSubview(passwordTextField)
-        addSubview(stackView)
+        
+        addSubview(stack)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
-            trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
-            bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1),
+            stack.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
+            stack.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: stack.trailingAnchor, multiplier: 1),
+            bottomAnchor.constraint(equalToSystemSpacingBelow: stack.bottomAnchor, multiplier: 1),
         ])
         
-        divider.heightAnchor.constraint(equalToConstant: 3).isActive = true
     }
 }
 
