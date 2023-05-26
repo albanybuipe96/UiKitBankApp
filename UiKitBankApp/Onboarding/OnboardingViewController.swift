@@ -9,9 +9,35 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    let stack = UIStackView()
-    let heroImage = UIImageView()
-    let titleLabel = UILabel()
+    private lazy var heroImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFit
+        image.image = UIImage(named: heroImageName)
+        return image
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.adjustsFontForContentSizeCategory = true
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.text = titleText
+        return label
+    }()
+    
+    private lazy var stack: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [
+            heroImage,
+            titleLabel
+        ])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.axis = .vertical
+        view.spacing = 20
+        return view
+    }()
     
     let heroImageName: String
     let titleText: String
@@ -31,7 +57,6 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        style()
         layout()
     }
 }
@@ -39,37 +64,13 @@ class OnboardingViewController: UIViewController {
 // MARK: - Style and Layout for ViewControler1
 extension OnboardingViewController {
     
-    func style() {
-        
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 20
-        
-        heroImage.translatesAutoresizingMaskIntoConstraints = false
-        heroImage.contentMode = .scaleAspectFit
-        heroImage.image = UIImage(named: heroImageName)
-        
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .title3)
-        titleLabel.adjustsFontForContentSizeCategory = true
-        titleLabel.textAlignment = .center
-        titleLabel.numberOfLines = 0
-        titleLabel.text = titleText
-    }
-    
     func layout() {
-        stack.addArrangedSubview(heroImage)
-        stack.addArrangedSubview(titleLabel)
         
         view.addSubview(stack)
         
-        // stack constraints
-        NSLayoutConstraint.activate([
-            stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stack.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stack.trailingAnchor, multiplier: 1),
-        ])
+        stack.centerY(view)
+        stack.centerX(view)
+        stack.pintoLeftAndRight(lsuperview: view.leadingAnchor, rsuperview: view.trailingAnchor, lspace: 8, rspace: -8)
 
     }
 }
