@@ -19,6 +19,7 @@
 		9CDDD7422A1BD1E500D6A6E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDD7412A1BD1E500D6A6E1 /* LoginView.swift */; };
 		9CED470F2A20260E003F54C1 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED470E2A20260E003F54C1 /* UIViewController+Utils.swift */; };
 		9CED47112A20798F003F54C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED47102A20798F003F54C1 /* MainViewController.swift */; };
+		9CED47142A20C4E9003F54C1 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED47132A20C4E9003F54C1 /* AccountSummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		9CDDD7412A1BD1E500D6A6E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9CED470E2A20260E003F54C1 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		9CED47102A20798F003F54C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9CED47132A20C4E9003F54C1 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +106,13 @@
 			isa = PBXGroup;
 			children = (
 				9CDDD72B2A1BCE6400D6A6E1 /* AppDelegate.swift */,
+				9CED47102A20798F003F54C1 /* MainViewController.swift */,
 				9C68C6312A1D57F600FA21A1 /* Login */,
 				9C68C6322A1D580F00FA21A1 /* Onboarding */,
+				9CED47122A20C49F003F54C1 /* AccountSummary */,
 				9C157ECE2A1E8FAF001F8C55 /* Utils */,
 				9CAE51E52A1E456800F3901B /* Dummy */,
 				9CDDD73F2A1BD16500D6A6E1 /* Generated Files */,
-				9CED47102A20798F003F54C1 /* MainViewController.swift */,
 			);
 			path = UiKitBankApp;
 			sourceTree = "<group>";
@@ -122,6 +125,14 @@
 				9CDDD7392A1BCE6600D6A6E1 /* Info.plist */,
 			);
 			name = "Generated Files";
+			sourceTree = "<group>";
+		};
+		9CED47122A20C49F003F54C1 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				9CED47132A20C4E9003F54C1 /* AccountSummaryViewController.swift */,
+			);
+			path = AccountSummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 				9CDDD7302A1BCE6400D6A6E1 /* LoginViewController.swift in Sources */,
 				9C68C6342A1DDE0D00FA21A1 /* OnboardingViewController.swift in Sources */,
 				9CED47112A20798F003F54C1 /* MainViewController.swift in Sources */,
+				9CED47142A20C4E9003F54C1 /* AccountSummaryViewController.swift in Sources */,
 				9CDDD72C2A1BCE6400D6A6E1 /* AppDelegate.swift in Sources */,
 				9C68C6302A1D447E00FA21A1 /* OnboardingContainerViewController.swift in Sources */,
 			);

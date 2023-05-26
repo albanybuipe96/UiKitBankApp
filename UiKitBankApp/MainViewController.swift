@@ -14,8 +14,8 @@ class MainViewController: UITabBarController {
     }
     
     private func setupViews() {
-        let summaryVC: AccountSummaryViewController = {
-            let vc = AccountSummaryViewController()
+        let summaryVC: AccountSummarViewController = {
+            let vc = AccountSummarViewController()
             vc.setTabBarImage(imageName: "list.dash.header.rectangle", title: "Summary")
             
             return vc
@@ -70,12 +70,6 @@ class MainViewController: UITabBarController {
     private func setupTabBar() {
         tabBar.tintColor = appColor
         tabBar.isTranslucent = false
-    }
-}
-
-class AccountSummaryViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemGreen
     }
 }
 

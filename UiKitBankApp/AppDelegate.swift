@@ -29,8 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onboardinViewContainerViewController.delegate = self
         dummyViewController.delegate = self
         
-        window?.rootViewController = mainViewController
-        mainViewController.selectedIndex = 1
+//        window?.rootViewController = mainViewController
+//        mainViewController.selectedIndex = 1
+        
+        window?.rootViewController = AccountSummarViewController()
         
         return true
     }
