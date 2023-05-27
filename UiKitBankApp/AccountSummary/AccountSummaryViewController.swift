@@ -12,11 +12,21 @@ class AccountSummarViewController: UIViewController {
     
     let games = ["Paceman", "Space Invaders", "Space Patrol"]
     
+    var tableHeader = {
+        let header = AccountSummaryHeaderView(frame: .zero)
+        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        header.frame.size = size
+        
+        return header
+    }()
+    
     lazy var tableView: UITableView = {
         let table = UITableView()
         table.delegate = self
         table.dataSource = self
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.tableHeaderView = tableHeader
         self.view.addSubview(table)
         return table
     }()
