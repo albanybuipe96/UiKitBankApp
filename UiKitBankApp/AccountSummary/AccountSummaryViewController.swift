@@ -17,7 +17,6 @@ class AccountSummarViewController: UIViewController {
         var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
         header.frame.size = size
-        
         return header
     }()
     
@@ -27,6 +26,9 @@ class AccountSummarViewController: UIViewController {
         table.dataSource = self
         table.translatesAutoresizingMaskIntoConstraints = false
         table.tableHeaderView = tableHeader
+        table.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
+        table.rowHeight = AccountSummaryCell.rowHeight
+        table.tableFooterView = UIView()
         self.view.addSubview(table)
         return table
     }()
@@ -50,9 +52,8 @@ extension AccountSummarViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = {
-            let cll = UITableViewCell()
-            cll.textLabel?.text = games[indexPath.row]
-            return cll
+            let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID, for: indexPath) as! AccountSummaryCell
+            return cell
         }()
         
         return cell
