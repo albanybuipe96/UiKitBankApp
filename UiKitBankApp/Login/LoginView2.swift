@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class LoginView: UIView {
+class LoginView2: UIView {
     
     lazy var usernameTextField: UITextField = {
         let textfield = UITextField()
@@ -69,7 +69,7 @@ class LoginView: UIView {
     
 }
 
-extension LoginView {
+extension LoginView2 {
     
     func layout() {
         
@@ -86,7 +86,7 @@ extension LoginView {
 }
 
 // MARK: - UITextFieldDelegate
-extension LoginView: UITextFieldDelegate {
+extension LoginView2: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         usernameTextField.endEditing(true)

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Positioner
+import HubtelLayoutKit
 
 class AccountSummarViewController: UIViewController {
     

@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		9C157ED02A1E8FC7001F8C55 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C157ECF2A1E8FC7001F8C55 /* LocalState.swift */; };
-		9C157EDD2A1F2C05001F8C55 /* Positioner in Frameworks */ = {isa = PBXBuildFile; productRef = 9C157EDC2A1F2C05001F8C55 /* Positioner */; };
 		9C1606682A225B6F004524C2 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1606672A225B6F004524C2 /* AccountSummaryCell.swift */; };
 		9C68C6302A1D447E00FA21A1 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */; };
 		9C68C6342A1DDE0D00FA21A1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C6332A1DDE0D00FA21A1 /* OnboardingViewController.swift */; };
 		9CAE51E72A1E458F00F3901B /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE51E62A1E458F00F3901B /* DummyViewController.swift */; };
+		9CCA6CF82A24133D00BD2A4C /* LoginView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA6CF72A24133D00BD2A4C /* LoginView2.swift */; };
+		9CCA6CFB2A241F3700BD2A4C /* Hubtel UI Components in Frameworks */ = {isa = PBXBuildFile; productRef = 9CCA6CFA2A241F3700BD2A4C /* Hubtel UI Components */; };
 		9CDDD72C2A1BCE6400D6A6E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDD72B2A1BCE6400D6A6E1 /* AppDelegate.swift */; };
 		9CDDD7302A1BCE6400D6A6E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDD72F2A1BCE6400D6A6E1 /* LoginViewController.swift */; };
 		9CDDD7352A1BCE6600D6A6E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD7342A1BCE6600D6A6E1 /* Assets.xcassets */; };
 		9CDDD7382A1BCE6600D6A6E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD7362A1BCE6600D6A6E1 /* LaunchScreen.storyboard */; };
-		9CDDD7422A1BD1E500D6A6E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDDD7412A1BD1E500D6A6E1 /* LoginView.swift */; };
 		9CED470F2A20260E003F54C1 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED470E2A20260E003F54C1 /* UIViewController+Utils.swift */; };
 		9CED47112A20798F003F54C1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED47102A20798F003F54C1 /* MainViewController.swift */; };
 		9CED47142A20C4E9003F54C1 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED47132A20C4E9003F54C1 /* AccountSummaryViewController.swift */; };
@@ -31,13 +31,13 @@
 		9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		9C68C6332A1DDE0D00FA21A1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9CAE51E62A1E458F00F3901B /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		9CCA6CF72A24133D00BD2A4C /* LoginView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView2.swift; sourceTree = "<group>"; };
 		9CDDD7282A1BCE6400D6A6E1 /* UiKitBankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UiKitBankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDDD72B2A1BCE6400D6A6E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CDDD72F2A1BCE6400D6A6E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9CDDD7342A1BCE6600D6A6E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CDDD7372A1BCE6600D6A6E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CDDD7392A1BCE6600D6A6E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CDDD7412A1BD1E500D6A6E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9CED470E2A20260E003F54C1 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		9CED47102A20798F003F54C1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9CED47132A20C4E9003F54C1 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C157EDD2A1F2C05001F8C55 /* Positioner in Frameworks */,
+				9CCA6CFB2A241F3700BD2A4C /* Hubtel UI Components in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				9CDDD72F2A1BCE6400D6A6E1 /* LoginViewController.swift */,
-				9CDDD7412A1BD1E500D6A6E1 /* LoginView.swift */,
+				9CCA6CF72A24133D00BD2A4C /* LoginView2.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			);
 			name = UiKitBankApp;
 			packageProductDependencies = (
-				9C157EDC2A1F2C05001F8C55 /* Positioner */,
+				9CCA6CFA2A241F3700BD2A4C /* Hubtel UI Components */,
 			);
 			productName = UiKitBankApp;
 			productReference = 9CDDD7282A1BCE6400D6A6E1 /* UiKitBankApp.app */;
@@ -208,7 +208,7 @@
 			);
 			mainGroup = 9CDDD71F2A1BCE6400D6A6E1;
 			packageReferences = (
-				9C157EDB2A1F2C05001F8C55 /* XCRemoteSwiftPackageReference "Positioner" */,
+				9CCA6CF92A241F3700BD2A4C /* XCRemoteSwiftPackageReference "Hubtel UI Components" */,
 			);
 			productRefGroup = 9CDDD7292A1BCE6400D6A6E1 /* Products */;
 			projectDirPath = "";
@@ -239,11 +239,11 @@
 			files = (
 				9CED470F2A20260E003F54C1 /* UIViewController+Utils.swift in Sources */,
 				9CED47162A20F4FF003F54C1 /* AcountSummaryHeaderView.swift in Sources */,
-				9CDDD7422A1BD1E500D6A6E1 /* LoginView.swift in Sources */,
 				9C157ED02A1E8FC7001F8C55 /* LocalState.swift in Sources */,
 				9CAE51E72A1E458F00F3901B /* DummyViewController.swift in Sources */,
 				9CDDD7302A1BCE6400D6A6E1 /* LoginViewController.swift in Sources */,
 				9C1606682A225B6F004524C2 /* AccountSummaryCell.swift in Sources */,
+				9CCA6CF82A24133D00BD2A4C /* LoginView2.swift in Sources */,
 				9C68C6342A1DDE0D00FA21A1 /* OnboardingViewController.swift in Sources */,
 				9CED47112A20798F003F54C1 /* MainViewController.swift in Sources */,
 				9CED47142A20C4E9003F54C1 /* AccountSummaryViewController.swift in Sources */,
@@ -458,9 +458,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9C157EDB2A1F2C05001F8C55 /* XCRemoteSwiftPackageReference "Positioner" */ = {
+		9CCA6CF92A241F3700BD2A4C /* XCRemoteSwiftPackageReference "Hubtel UI Components" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/albanybuipe96/Positioner.git";
+			repositoryURL = "https://mohammedalbany@dev.azure.com/mohammedalbany/Hubtel%20UI%20Components/_git/Hubtel%20UI%20Components";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -469,10 +469,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9C157EDC2A1F2C05001F8C55 /* Positioner */ = {
+		9CCA6CFA2A241F3700BD2A4C /* Hubtel UI Components */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C157EDB2A1F2C05001F8C55 /* XCRemoteSwiftPackageReference "Positioner" */;
-			productName = Positioner;
+			package = 9CCA6CF92A241F3700BD2A4C /* XCRemoteSwiftPackageReference "Hubtel UI Components" */;
+			productName = "Hubtel UI Components";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

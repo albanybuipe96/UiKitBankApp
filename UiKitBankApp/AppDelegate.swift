@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        mainViewController.selectedIndex = 1
         
         window?.rootViewController = AccountSummarViewController()
+//        window?.rootViewController = loginViewController
         
         return true
     }

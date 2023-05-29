@@ -11,7 +11,7 @@ import UIKit
 class AccountSummaryCell: UITableViewCell {
     
     static let reuseID = "AccountSummaryCell"
-    static let rowHeight: CGFloat = 100
+    static let rowHeight: CGFloat = 112
     
     lazy var typeLabel: UILabel = {
         let lbl = UILabel()
@@ -54,7 +54,7 @@ class AccountSummaryCell: UITableViewCell {
     lazy var amountLabel: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "$179,562.58"
+        lbl.attributedText = formattedBalance(dollars: "179,562", cents: "58")
         lbl.textAlignment = .right
         lbl.font = UIFont.preferredFont(forTextStyle: .body)
         contentView.addSubview(lbl)
@@ -115,5 +115,19 @@ extension AccountSummaryCell {
 //            chevronImage.leadingAnchor.constraint(equalToSystemSpacingAfter: balanceStack.trailingAnchor, multiplier: 0),
             trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImage.trailingAnchor, multiplier: 1),
         ])
+    }
+    
+    private func formattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
+        let dollarSignAttr: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 4]
+        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttr)
+        
+        let dollarAttr: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+        let dollar = NSAttributedString(string: dollars, attributes: dollarAttr)
+        
+        let centAttr: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 4]
+        let cent = NSAttributedString(string: cents, attributes: centAttr)
+        rootString.append(dollar)
+        rootString.append(cent)
+        return rootString
     }
 }
