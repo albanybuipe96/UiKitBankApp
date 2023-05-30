@@ -11,6 +11,7 @@
 		9C1606682A225B6F004524C2 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1606672A225B6F004524C2 /* AccountSummaryCell.swift */; };
 		9C68C6302A1D447E00FA21A1 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */; };
 		9C68C6342A1DDE0D00FA21A1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68C6332A1DDE0D00FA21A1 /* OnboardingViewController.swift */; };
+		9C71B4B02A24C613000DBB47 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C71B4AF2A24C613000DBB47 /* CurrencyFormatter.swift */; };
 		9CAE51E72A1E458F00F3901B /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE51E62A1E458F00F3901B /* DummyViewController.swift */; };
 		9CCA6CF82A24133D00BD2A4C /* LoginView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA6CF72A24133D00BD2A4C /* LoginView2.swift */; };
 		9CCA6CFB2A241F3700BD2A4C /* Hubtel UI Components in Frameworks */ = {isa = PBXBuildFile; productRef = 9CCA6CFA2A241F3700BD2A4C /* Hubtel UI Components */; };
@@ -30,6 +31,7 @@
 		9C1606672A225B6F004524C2 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		9C68C62F2A1D447E00FA21A1 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		9C68C6332A1DDE0D00FA21A1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		9C71B4AF2A24C613000DBB47 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		9CAE51E62A1E458F00F3901B /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		9CCA6CF72A24133D00BD2A4C /* LoginView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView2.swift; sourceTree = "<group>"; };
 		9CDDD7282A1BCE6400D6A6E1 /* UiKitBankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UiKitBankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 			children = (
 				9C157ECF2A1E8FC7001F8C55 /* LocalState.swift */,
 				9CED470E2A20260E003F54C1 /* UIViewController+Utils.swift */,
+				9C71B4AF2A24C613000DBB47 /* CurrencyFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				9CAE51E72A1E458F00F3901B /* DummyViewController.swift in Sources */,
 				9CDDD7302A1BCE6400D6A6E1 /* LoginViewController.swift in Sources */,
 				9C1606682A225B6F004524C2 /* AccountSummaryCell.swift in Sources */,
+				9C71B4B02A24C613000DBB47 /* CurrencyFormatter.swift in Sources */,
 				9CCA6CF82A24133D00BD2A4C /* LoginView2.swift in Sources */,
 				9C68C6342A1DDE0D00FA21A1 /* OnboardingViewController.swift in Sources */,
 				9CED47112A20798F003F54C1 /* MainViewController.swift in Sources */,
