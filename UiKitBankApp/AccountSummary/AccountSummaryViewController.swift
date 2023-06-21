@@ -36,6 +36,7 @@ class AccountSummarViewController: UIViewController {
         table.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
         table.rowHeight = AccountSummaryCell.rowHeight
         table.tableFooterView = UIView()
+        table.backgroundColor = appColor
         self.view.addSubview(table)
         return table
     }()
