@@ -37,6 +37,7 @@ class AccountSummaryCell: UITableViewCell {
         lbl.text = "Banking"
         lbl.adjustsFontForContentSizeCategory = true
         lbl.font = UIFont.preferredFont(forTextStyle: .caption1)
+        lbl.adjustsFontSizeToFitWidth = true
         contentView.addSubview(lbl)
         return lbl
     }()
@@ -56,6 +57,7 @@ class AccountSummaryCell: UITableViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Account Name"
         lbl.font = UIFont.preferredFont(forTextStyle: .body)
+        lbl.adjustsFontSizeToFitWidth = true
         contentView.addSubview(lbl)
         return lbl
     }()
@@ -65,6 +67,7 @@ class AccountSummaryCell: UITableViewCell {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.text = "Current Balance"
         lbl.font = UIFont.preferredFont(forTextStyle: .body)
+        lbl.adjustsFontSizeToFitWidth = true
         contentView.addSubview(lbl)
         return lbl
     }()
@@ -75,6 +78,7 @@ class AccountSummaryCell: UITableViewCell {
         lbl.attributedText = formattedBalance(dollars: "179,562", cents: "58")
         lbl.textAlignment = .right
         lbl.font = UIFont.preferredFont(forTextStyle: .body)
+        lbl.adjustsFontSizeToFitWidth = true
         contentView.addSubview(lbl)
         return lbl
     }()

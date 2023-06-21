@@ -84,8 +84,10 @@ extension OnboardingContainerViewController {
     private func layout() {
         view.addSubview(closeButton)
         
-        closeButton.pintoLeft(superview: view.leadingAnchor, space: 16)
-        closeButton.pintoTop(superview: view.safeAreaLayoutGuide.topAnchor, space: 16)
+        NSLayoutConstraint.activate([
+            closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 4),
+        ])
     }
 }
 

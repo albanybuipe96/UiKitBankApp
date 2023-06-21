@@ -68,9 +68,12 @@ extension OnboardingViewController {
         
         view.addSubview(stack)
         
-        stack.centerY(view)
-        stack.centerX(view)
-        stack.pintoLeftAndRight(lsuperview: view.leadingAnchor, rsuperview: view.trailingAnchor, lspace: 8, rspace: -8)
+        NSLayoutConstraint.activate([
+            stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 2),
+        ])
 
     }
 }

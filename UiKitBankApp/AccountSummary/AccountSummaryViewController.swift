@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import HubtelLayoutKit
 
 class AccountSummarViewController: UIViewController {
     
@@ -18,6 +17,12 @@ class AccountSummarViewController: UIViewController {
     var profile: Profile?
     
     var accounts: [AccountSummaryCell.ViewModel] = []
+    
+    lazy var logoutButtonItem: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+        button.tintColor = .label
+        return button
+    }()
     
     var tableHeader = {
         let header = AccountSummaryHeaderView(frame: .zero)
@@ -44,17 +49,29 @@ class AccountSummarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupNavigationBar()
         fetchData()
     }
 }
 
+// MARK: - Setup & Design Section
 extension AccountSummarViewController {
     private func setup() {
-        tableView.constrainToSuperView(on: view)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutButtonItem
     }
 }
 
-extension AccountSummarViewController: UITableViewDataSource {
+// MARK: - UITableViewDataSource & UITableViewDelegate Section
+extension AccountSummarViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         accounts.count
     }
@@ -75,13 +92,14 @@ extension AccountSummarViewController: UITableViewDataSource {
     
 }
 
-extension AccountSummarViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
+// MARK: - Actions & Events Section
+extension AccountSummarViewController {
+    @objc func logoutTapped(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }
 
-// MARK: - Networking
+// MARK: - Networking Section
 extension AccountSummarViewController {
     private func fetchData() {
         fetchAccounts()

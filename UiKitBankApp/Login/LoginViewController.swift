@@ -6,12 +6,10 @@
 //
 
 import UIKit
-import HubtelLayoutKit
-import HubtelLoginKit
 
-protocol LogoutDelegate: AnyObject {
-    func didLogout()
-}
+//protocol LogoutDelegate: AnyObject {
+//    func didLogout()
+//}
 
 protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
@@ -70,11 +68,11 @@ class LoginViewController: UIViewController {
     weak var delegate: LoginViewControllerDelegate?
     
     var username: String? {
-        loginView.usernameField.text
+        loginView.usernameTextField.text
     }
     
     var password: String? {
-        loginView.passwordField.text
+        loginView.passwordTextField.text
     }
     
     override func viewDidLoad() {
@@ -99,21 +97,39 @@ extension LoginViewController {
         view.addSubview(signinButton)
         view.addSubview(errorMessageLabel)
         
-        titleLabel.pintoBottom(superview: mottoLabel.topAnchor, space: -20)
-        titleLabel.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
+        // Title
+        NSLayoutConstraint.activate([
+            mottoLabel.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
         
-        mottoLabel.pintoBottom(superview: loginView.topAnchor, space: -50)
-        mottoLabel.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
+        // Subtitle
+        NSLayoutConstraint.activate([
+            loginView.topAnchor.constraint(equalToSystemSpacingBelow: mottoLabel.bottomAnchor, multiplier: 3),
+            mottoLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            mottoLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
+        ])
         
-        loginView.centerX(view)
-        loginView.centerY(view)
-        loginView.pintoLeftAndRight(lsuperview: view.leadingAnchor, rsuperview: view.trailingAnchor, lspace: 8, rspace: -8)
+        // LoginView
+        NSLayoutConstraint.activate([
+            loginView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: loginView.trailingAnchor, multiplier: 2),
+            view.centerYAnchor.constraint(equalTo: loginView.centerYAnchor),
+        ])
         
-        signinButton.pintoTop(superview: loginView.bottomAnchor, space: 16)
-        signinButton.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
+        // Button
+        NSLayoutConstraint.activate([
+            signinButton.topAnchor.constraint(equalToSystemSpacingBelow: loginView.bottomAnchor, multiplier: 2),
+            signinButton.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            signinButton.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+        ])
         
-        errorMessageLabel.pintoTop(superview: signinButton.bottomAnchor, space: 16)
-        errorMessageLabel.pintoLeftAndRight(lsuperview: loginView.leadingAnchor, rsuperview: loginView.trailingAnchor)
+        // Error message
+        NSLayoutConstraint.activate([
+            errorMessageLabel.topAnchor.constraint(equalToSystemSpacingBelow: signinButton.bottomAnchor, multiplier: 2),
+            errorMessageLabel.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+            errorMessageLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
+        ])
         
     }
 }
