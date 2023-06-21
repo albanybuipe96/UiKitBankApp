@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "positioner",
+      "identity" : "hubtel%20ui%20components",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/albanybuipe96/Positioner.git",
+      "location" : "https://mohammedalbany@dev.azure.com/mohammedalbany/Hubtel%20UI%20Components/_git/Hubtel%20UI%20Components",
       "state" : {
         "branch" : "main",
-        "revision" : "4178204a518483d4a97214dd4bfa8be959b60940"
+        "revision" : "d61902bd99125f736b78184515de5a6f135582b9"
       }
     }
   ],

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import Positioner
+import HubtelLayoutKit
+import HubtelLoginKit
 
 protocol LogoutDelegate: AnyObject {
     func didLogout()
@@ -69,11 +70,11 @@ class LoginViewController: UIViewController {
     weak var delegate: LoginViewControllerDelegate?
     
     var username: String? {
-        loginView.usernameTextField.text
+        loginView.usernameField.text
     }
     
     var password: String? {
-        loginView.passwordTextField.text
+        loginView.passwordField.text
     }
     
     override func viewDidLoad() {
